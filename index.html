@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <title>avs</title>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #b895a5;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+
+    .page {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 0 20px;
+    }
+
+    .page.active {
+      display: flex;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      text-align: left;
+      flex-wrap: wrap;
+      max-width: 900px;
+    }
+
+    .profile-pic {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border: 2px solid #000000;
+      box-shadow: 2 3 10px rgba(222, 213, 213, 0.2);
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .name {
+      font-family: 'Merriweather', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 50px;
+      margin: 0;
+    }
+
+    .links {
+      font-size: 20px;
+      margin: 15px 0 5px 0;
+    }
+
+    .subtitle {
+      font-family: 'Merriweather', serif;
+      font-size: 26px;
+      margin: 10px 0 5px 0;
+    }
+
+    .location {
+      font-size: 15px;
+      font-family: 'Merriweather', serif;
+      margin: 0;
+    }
+
+    .about-title {
+      font-family: 'Merriweather', serif;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .about-me {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 700px;
+    }
+
+    footer {
+      font-family: 'Merriweather', serif;
+      position: absolute;
+      bottom: 10px;
+      font-size: 14px;
+      color: #333;
+      width: 100%;
+      text-align: center;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .nav {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 16px;
+    }
+
+    .nav a {
+      margin-left: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav">
+  <a onclick="showPage('home')">home</a>
+  <a onclick="showPage('about')">about</a>
+</div>
+
+<div id="home" class="page active">
+  <div class="container">
+    <img src="images/sexy.jpg" alt="picture" class="profile-pic">
+
+    <div class="text">
+      <p class="name">aditya saini</p>
+      <p class="links">
+        / <a href="https://github.com/Saini-01">github</a> /
+        <a href="https://www.linkedin.com/in/aditya-saini-3a2b88363/">linkedin</a> /
+        <a href="mailto:saini91@purdue.edu">email</a> /
+        <a href="https://docs.google.com/document/d/1799uuYXCg0fEVOvBEtbReL-Ddn6tncGwnxNQyiX94T0/edit?tab=t.0">resume</a> / projects
+      </p> 
+      <p class="subtitle">cs + math @ purdue university</p>
+      <p class="location">edison, nj: <span id="eastern-time"></span></p>
+    </div>
+  </div>
+</div>
+
+<div id="about" class="page">
+  <div class="container" style="flex-direction: column; text-align: left;">
+    <p class="about-title">about me</p>
+    <p class="about-me">
+      i’m a computer science and math student at purdue interested in machine learning, embedded systems, robotics, and space technology.
+      currently, i am learning c and working on building a calculator to perform matrix operations. 
+    </p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 aditya saini</p>
+</footer>
+
+<script>
+  function updateEasternTime() {
+    const easternTimeElement = document.getElementById('eastern-time');
+    const now = new Date();
+    const options = { timeZone: 'America/New_York', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+    easternTimeElement.textContent = now.toLocaleString('en-US', options);
+  }
+
+  window.onload = function () {
+    updateEasternTime();
+    setInterval(updateEasternTime, 1000);
+  };
+
+  function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(page => {
+      page.classList.remove('active');
+    });
+    document.getElementById(pageId).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
