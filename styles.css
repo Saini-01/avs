@@ -1,5 +1,5 @@
 body {
-  background-color: #b895a5;
+  background-color: #f1e6d6;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -69,13 +69,15 @@ body {
 .about-title {
   font-family: 'Merriweather', serif;
   font-size: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+  margin-top: 20px;
 }
 
 .about-me {
   font-size: 18px;
   line-height: 1.6;
   max-width: 700px;
+  margin-top: 0; /* <-- Add this line */
 }
 
 footer {
