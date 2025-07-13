@@ -10,6 +10,7 @@
 <div class="nav">
   <a onclick="showPage('home')">home</a>
   <a onclick="showPage('about')">about</a>
+  <a onclick="showPage('projects')">projects</a>
 </div>
 
 <div id="home" class="page active">
@@ -22,7 +23,7 @@
         / <a href="https://github.com/Saini-01">github</a> /
         <a href="https://www.linkedin.com/in/aditya-saini-3a2b88363/">linkedin</a> /
         <a href="mailto:saini91@purdue.edu">email</a> /
-        <a href="https://docs.google.com/document/d/1799uuYXCg0fEVOvBEtbReL-Ddn6tncGwnxNQyiX94T0/edit?tab=t.0">resume</a> / projects
+        <a href="https://docs.google.com/document/d/1799uuYXCg0fEVOvBEtbReL-Ddn6tncGwnxNQyiX94T0/edit?tab=t.0">resume</a> / <a onclick="showPage('projects')">projects</a>
       </p> 
       <p class="subtitle">cs + math @ purdue university</p>
       <p class="location">edison, nj: <span id="eastern-time"></span></p>
@@ -46,6 +47,43 @@
       personally, i enjoy nature and my goal is to visit every national park by when im 30. i want to get more into fishing and camping,
       and i also want to learn how to snowboard. i also play the bass guitar and have made a couple of songs before. 
     </p>
+  </div>
+</div>
+
+<div id="projects" class="page">
+  <div class="container" style="flex-direction: column; text-align: left;">
+    <p class="about-title">projects</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>nlsh</h3>
+        <p>currently working on a natural language shell that can be used to perform shell commands through natural language queries.</p>
+        <div class="project-tags">
+          <span class="tag">c</span>
+          <span class="tag">nlp</span>
+          <span class="tag">shell</span>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <h3>personal website</h3>
+        <p>this website built with html, css, and javascript. features responsive design and clean navigation.</p>
+        <div class="project-tags">
+          <span class="tag">html</span>
+          <span class="tag">css</span>
+          <span class="tag">javascript</span>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <h3>future projects</h3>
+        <p>planning to work on embedded systems projects, robotics applications, and machine learning implementations.</p>
+        <div class="project-tags">
+          <span class="tag">rust</span>
+          <span class="tag">c++</span>
+          <span class="tag">ros</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
